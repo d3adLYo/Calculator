@@ -1,0 +1,161 @@
+@import "_NullStyle";
+
+$myColor: rgb(236, 18, 207);
+$myColor2: rgb(179, 26, 158);
+
+body{
+    background-image: linear-gradient(to bottom right, rgb(180, 12, 12), rgb(16, 16, 173), rgb(189, 133, 30), purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    width: 480px;
+    height: 800px;
+
+    border: 5px solid $myColor;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-radius: 10%;
+    overflow: hidden;
+    backdrop-filter: blur(100px);
+    box-shadow: -5px -5px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    div>button{
+        transition: background-color 0.5s ease;
+    }
+
+    div>button:hover{
+        background-color: $myColor;
+    }
+
+    .add-value-box{
+        border-bottom: 4px solid $myColor;
+
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        padding: 5px 0;
+        input{
+            width: 80%;
+            height: 100%;
+            font-size: 35px;
+            border: 2px solid $myColor2;
+
+            background-color: #242424;
+            color: rgb(255, 255, 255);
+        }
+    }
+
+    .show-value-box{
+        border-bottom: 4px solid $myColor;
+
+        flex: 1 1 auto;
+
+        height: 100%;
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+
+       display: flex;
+       flex-direction: column;
+        #showValue{
+            overflow: auto;
+            height: 50px;
+            flex: 1 1 auto;
+        }
+
+        #deleteShowValue{
+            height: 50px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            border-top: 4px solid $myColor;
+
+            #deleteStorage{
+                font-size: 25px;
+                border: 2px solid $myColor2;
+                border-radius: 20%;
+                width: 180px;
+                height: 40px;
+                
+    
+                background-color: #242424;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+
+    .additional-func{
+        border-bottom: 4px solid $myColor;
+        min-height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        button{
+            font-size: 30px;
+            border: 2px solid $myColor2;
+            border-radius: 20%;
+            width: 130px;
+            height: 50px;
+
+            background-color: #242424;
+            color: rgb(255, 255, 255);
+        }
+
+        #historyBtn:disabled{
+            background-color: rgb(194, 32, 32);
+            border: 2px solid red;
+            color: rgb(187, 187, 187);
+        }
+    }
+
+    .math{
+        height: 520px;
+        padding: 5px 0 5px 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        
+        .actions{
+            color: rgb(250, 228, 27);
+        }
+
+        .red{
+            color: red;
+        }
+
+        .equal{
+            background-color: rgb(29, 192, 29);
+            transition: background-color 0.3 ease;
+        }
+
+        .equal:hover{
+            background-color: rgb(63, 235, 63);
+        }
+
+        button{
+            margin: 3px;
+            max-width: 90px;
+            min-height: 90px;
+            border: 2px solid $myColor2;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 1 25%;
+
+            font-size: 50px;
+            background-color: #242424;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
